@@ -3,10 +3,14 @@
 
 from github import Github
 
-guser = "idafan"
-gpassword = "123Dublin"
+guser = input("Enter username: ")
+gpassword = input("Enter password: ")
 
-ida = Github(guser, gpassword)
+g = Github(guser, gpassword)
+
+for repo in g.get_user().get_repos():
+    print(repo.name)
+    repo.edit(has_wiki=False)
 
 ##repos = [_ for _ in ida.get_user().get_repos()]
 ##print(repos)
@@ -17,13 +21,13 @@ ida = Github(guser, gpassword)
 ##repos = [_ for _ in ida.get_user().get_repos()]
 ##print(repos)
 
-repo = ida.get_repo("idafan/CS3012SE")
-branches = list(repo.get_branches())
-print(branches)
-
-
-commit = repo.get_commit('master')
-print(commit.commit.author.date)
+##repo = ida.get_repo("idafan/CS3012SE")
+##branches = list(repo.get_branches())
+##print(branches)
+##
+##
+##commit = repo.get_commit('master')
+##print(commit.commit.author.date)
 
 ##for repo in ida.get_user().get_repos():
 ##        print(repo.name)
@@ -40,3 +44,4 @@ print(commit.commit.author.date)
 
 
 ##commits = repo.iter_commits('--all', max_count=100, since='60.days.ago', paths=path)
+

@@ -1,0 +1,67 @@
+
+
+html {
+	width: 100%;
+	height: 100%;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+
+	font-size:18px;
+	background-color: rgb(202, 234, 238);
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	font-family: Arial;
+	text-align:left;
+}
+
+body{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	width: 60%;
+	height: 100%;
+	justify-content: center;
+	margin-left: 20%;
+	padding-top: 50px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-variant: small-caps;
+	font-style: Italic;
+	font-weight: 900;
+	text-align: center;
+	cursor:default;
+}
+
+p {
+	text-indent: 24px;
+	white-space: pre-line;
+	cursor:default;
+}
+
+img {
+	float: right;
+	padding: 5px 5px 5px 5px;
+	opacity:1;
+}
+
+p a {
+	text-decoration: none;
+	border:none;
+}
+
+nav {
+	overflow: hidden;
+	background-color:black;
+	top:0px;
+	width: 100%;
+	position:fixed;
+	margin-left: -20%;
+}
+
+
+
+div.main {
+	padding: 10px 10px 10px 10px;
+	margin-top: 35px;
+}
