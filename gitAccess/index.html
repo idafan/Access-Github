@@ -5,20 +5,28 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
   <h1>CS3012 Software Engineering </h1>
     <h3> Project - Measuring </h3>
-
-    <!--<script src= http://people.kth.se/~kansy/Psyduck/menubar.js> </script>-->
 </head>
+
+
 <body>
-    <div class="findUser">
-      <input type="text" id="user"  placeholder="Enter GitHub username">
-        <br>
-      <input type = "button" value ="Show me" onclick = kontrolleraSvar(this.form)>
+  <div class="container">
+    <div class="searchContainer">
+      <input type="text" id="searchUser"  placeholder="Enter GitHub username">
+      <!--<input type = "button" value ="Show me" onclick = kontrolleraSvar(this.form)>-->
     </div>
-    <br>
     <div id="profile"></div>
+   </div>
+   <!--box for the diagram-->
+  <div id="box"></div>
+
+  <!-- Files for codeflower -->
+  <script src="CodeFlower.js"></script>
+	<script src="d3.js"></script>
+	<script src="d3.layout.js"></script>
+	<script src="d3.geom.js"></script>
+
 
   <script
-  src="https://code.jquery.com/jquery-3.1.1.js"
-  <script src="index.js"></script>
+
 </body>
 </html>

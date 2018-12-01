@@ -39,6 +39,7 @@
     "tape": "4"
   },
   "dependencies": {
+
     "d3-array": "1",
     "d3-axis": "1",
     "d3-brush": "1",
