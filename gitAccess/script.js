@@ -1,19 +1,23 @@
-
-
+//Input för vad diagrammet ska visas, taget från exemplet på hemsidan
 var jsonData = function(data){
-  //console.log(data);
-  let json = JSON.stringify(data);
-  console.log(data);
+	console.log(data); //data är en dictionary med alla språk och hur många repos som var skrivna i det språket
+	//Kolla i consolen vad som skrivs ut
+	console.log(Object.keys(data));
 
-/*
-For username idafan:
-Object
-CSS: 1
-HTML: 2
-JavaScript: 8
-Python: 9
-*/
+	/*Object
+	HTML: 1
+	Python: 1
+	__proto__: Object
 
-  //var myFlower = new CodeFlower("#box", 500, 300)
-  //myFlower.update(json);
+	Array(2)
+	0: "HTML"
+	1: "Python"
+	length: 2
+	__proto__: Array(0)*/
+
+		$('#ida').html(`
+			<div class="well">
+				${data.Python}
+			</div>`)
+
 };
