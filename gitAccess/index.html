@@ -1,32 +1,82 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" type="text/css" href="style.css">
+  <title>GitHub Languages</title>
   <h1>CS3012 Software Engineering </h1>
-    <h3> Project - Measuring </h3>
+    <h3> GitHub information </h3>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  <!-- jQuery library for javascript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
 </head>
-
 
 <body>
   <div class="container">
     <div class="searchContainer">
       <input type="text" id="searchUser"  placeholder="Enter GitHub username">
-      <!--<input type = "button" value ="Show me" onclick = kontrolleraSvar(this.form)>-->
+      <!--<input type = "button" value ="Show me" onclick = someFunction()>-->
     </div>
     <div id="profile"></div>
    </div>
    <!--box for the diagram-->
   <div id="box"></div>
-
-  <!-- Files for codeflower -->
-  <script src="CodeFlower.js"></script>
-	<script src="d3.js"></script>
-	<script src="d3.layout.js"></script>
-	<script src="d3.geom.js"></script>
-
-
-  <script
-
+  <!-- Include other files -->
+  <script src="main.js"></script>
+  <script src="script.js"></script>
 </body>
+<!-- _____________________________________________________________ -->
+<!-- https://developer.github.com/v3/guides/rendering-data-as-graphs/?fbclid=IwAR23C_k-4TXYh0P-4Ch1zun3n-8V_Qp4rkZKKaQCMJGBc_tZQJo-DCKGV9I -->
+<!-- _____________________________________________________________ -->
+<script>
+    <!-- var data = %= languages %; -->
+
+    var barWidth = 40;
+    var width = (barWidth + 10) <!-- * data.length-->;
+    var height = 300;
+
+    var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
+    var y = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.count; })]).
+      rangeRound([0, height]);
+
+    // add the canvas to the DOM
+    var languageBars = d3.select("#box").
+      append("svg:svg").
+      attr("width", width).
+      attr("height", height);
+
+    languageBars.selectAll("rect").
+      data(data).
+      enter().
+      append("svg:rect").
+      attr("x", function(datum, index) { return x(index); }).
+      attr("y", function(datum) { return height - y(datum.count); }).
+      attr("height", function(datum) { return y(datum.count); }).
+      attr("width", barWidth);
+
+    languageBars.selectAll("text").
+      data(data).
+      enter().
+      append("svg:text").
+      attr("x", function(datum, index) { return x(index) + barWidth; }).
+      attr("y", function(datum) { return height - y(datum.count); }).
+      attr("dx", -barWidth/2).
+      attr("dy", "1.2em").
+      attr("text-anchor", "middle").
+      text(function(datum) { return datum.count;});
+
+    languageBars.selectAll("text.yAxis").
+      data(data).
+      enter().append("svg:text").
+      attr("x", function(datum, index) { return x(index) + barWidth; }).
+      attr("y", height).
+      attr("dx", -barWidth/2).
+      attr("text-anchor", "middle").
+      text(function(datum) { return datum.language;}).
+      attr("transform", "translate(0, 18)").
+      attr("class", "yAxis");
+  </script>
+
+<!-- _____________________________________________________________ -->
+
 </html>
