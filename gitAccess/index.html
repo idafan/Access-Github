@@ -1,28 +1,31 @@
 <!doctype html>
+<meta charset="utf-8">
 <html>
 <head>
-	<title>CodeFlower</title>
+	<title>GitHub Languages</title>
+  <h1>CS3012 Software Engineering </h1>
+    <h3> GitHub information </h3>
 	<link rel="stylesheet" href="style.css" type="text/css">
 	<!-- jQuery library for javascript -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>-->
 </head>
 <body>
 	<div class="container">
       <div class="searchContainer">
-        <h1>Lookup a Github username</h1>
-        <p class="lead">Enter in a username and watch the magic happen</p>
-        <input type="text" id="searchUser" class="form-control" placeholder="Gitbook Username...">
-				<button type="button" onclick="fetchGitHub()" >Show me</button>
+        <input type="text" id="searchUser" class="form-control" placeholder="Enter Gitbook Username"> <!--Input-box-->
+				<button type="button" onclick="fetchGitHub()" >Show me</button> <!--Show me button-->
       </div>
 			<div id="profile"></div>
   </div>
 
-	<!--Rutan där diagrammet skrivs ut -->
-	<div id="ida"></div>
+	<!--Print from script.js -->
+	<div id="Count"></div>
 
 
-	<!-- Filen som diagrammet skapas i -->
+	<!-- Include files-->
 	<script src="main.js"></script>
 	<script src="script.js"></script>
 

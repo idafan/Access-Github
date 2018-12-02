@@ -1,5 +1,5 @@
 function fetchGitHub(){ //e=event
-    let username = $("#searchUser").val(); //Värdet på input
+    let username = $("#searchUser").val(); //#searchUser is the value of the input
     let data = {};
 
     // Make request to Github
@@ -11,7 +11,7 @@ function fetchGitHub(){ //e=event
 
       }
     }).done(function(user){
-      $.ajax({ //Information vi behöver
+      $.ajax({ //Information we need
         contentType: 'application/json',
         url:'https://api.github.com/users/'+username+'/repos',
         data:{
@@ -20,7 +20,7 @@ function fetchGitHub(){ //e=event
           sort: 'created: asc',
           per_page: 20
         }
-      }).done(function(repos){ //när information är hämtat och vi fått svar, då svarar github med detta
+      }).done(function(repos){ //When we have information and got an answer, then GitHub replies with this
         $.each(repos, function(index, repo){
           if(repo.language){
             if(!data[repo.language])
@@ -29,7 +29,7 @@ function fetchGitHub(){ //e=event
               data[repo.language]+=1;
           }
 
-          //Lägger till i HTML
+          //Adds to HTML
           $('#repos').append(`
             <div class="well">
               <div class="row">

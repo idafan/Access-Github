@@ -1,8 +1,7 @@
-//Input för vad diagrammet ska visas, taget från exemplet på hemsidan
+
 var jsonData = function(data){
-	console.log(data); //data är en dictionary med alla språk och hur många repos som var skrivna i det språket
-	//Kolla i consolen vad som skrivs ut
-	console.log(Object.keys(data));
+	console.log(data);
+	console.log(Object.keys(data)); //Check what's inside
 
 	/*Object
 	HTML: 1
@@ -15,7 +14,7 @@ var jsonData = function(data){
 	length: 2
 	__proto__: Array(0)*/
 
-		$('#ida').html(`
+		$('#count').html(`
 			<div class="well">
 				${data.Python}
 			</div>`)
