@@ -43,10 +43,11 @@ function fetchGitHub(){ //e=event
             </div>
           `);
         });
-        jsonData(data);
+        jsonData(data); //See information in console
+        showd3(data);
       });
-      $('#profile').html(`
+      /*$('#profile').html(`
         <div id="repos"></div>
-      `);
+      `);*/
     });
   };
